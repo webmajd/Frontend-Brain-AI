@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/alpine.min.js" defer></script>
+  <script src="./js/tailwindcss.js"></script>
+  <link src="./css/style.css">
+  <title>BrainAI</title>
+</head>
+
+<body class="bg-gray-900 text-white transition-colors duration-300" id="theme-body">
+  <header
+    class="fixed top-4 left-4 right-4 lg:mx-15 xl:mx-32 backdrop-blur-md bg-white/20 shadow-lg p-4 flex justify-between items-center text-white rounded-xl border border-white/30 z-40"
+    id="header">
+    <div class="flex items-center gap-4">
+      <button class="lg:hidden" id="menu-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <span class="text-xl font-bold" id="logo">BAI</span>
+    </div>
+    <nav class="hidden lg:flex space-x-6 rtl:space-x-reverse" id="nav-links">
+      <a href="#" class="hover:text-gray-300">شروع رایگان</a>
+      <a href="#" class="hover:text-gray-300">محصولات</a>
+      <a href="#" class="hover:text-gray-300">اشتراک‌ها</a>
+      <a href="#" class="hover:text-gray-300">سوالات</a>
+      <a href="#" class="hover:text-gray-300">وبلاگ</a>
+      <a href="#" class="hover:text-gray-300">درباره ما</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg" id="auth-btn">ورود | ثبت‌نام</button>
+      <span id="lang">EN</span>
+      <button id="theme-toggle" class="text-2xl">☀️</button>
+    </div>
+  </header>
+
+  <div id="mobile-menu"
+    class="fixed top-0 right-0 w-1/2 h-full bg-gray-800/80 text-white shadow-lg p-5 transform translate-x-full transition-transform lg:hidden rounded-l-xl border-l border-white/30 backdrop-blur-md z-50">
+    <button class="mb-4 text-xl" id="menu-close">×</button>
+    <nav class="flex flex-col space-y-4">
+      <a href="#" class="hover:text-gray-300">شروع رایگان</a>
+      <a href="#" class="hover:text-gray-300">محصولات</a>
+      <a href="#" class="hover:text-gray-300">اشتراک‌ها</a>
+      <a href="#" class="hover:text-gray-300">سوالات</a>
+      <a href="#" class="hover:text-gray-300">وبلاگ</a>
+      <a href="#" class="hover:text-gray-300">درباره ما</a>
+    </nav>
+  </div>
+
+
+
+
+  <div class="mt-24 px-4 md:px-12 lg:px-24 py-10">
+    <div id="intro-box"
+      class="relative flex flex-col md:flex-row items-center bg-white/30 p-6 md:p-8 lg:p-12 rounded-2xl shadow-xl max-w-6xl mx-auto w-full backdrop-blur-md border border-white/30 text-white transition-colors duration-300">
+
+      <div class="w-full md:w-1/2 text-center md:text-right p-4">
+        <h1 id="intro-title" class="text-2xl md:text-4xl lg:text-4xl font-bold">با BrainAI، هوش مصنوعی در خدمت شماست!</h1>
+        <p id="intro-text" class="mt-4 text-lg md:text-xl">BrainAI یک پلتفرم هوش مصنوعی است که با بیش از 87 ابزار هوش مصنوعی و خدمات متنوع، به طور ویژه برای کاربران فارسی زبان طراحی شده است.</p>
+        <button id="intro-btn"
+          class="mt-6 px-6 py-3 border border-white text-white rounded-lg transition-all duration-300 hover:bg-white hover:text-black">رایگان شروع کنید!</button>
+      </div>
+
+      <div class="w-full md:w-1/2 -mb-10 flex justify-center">
+        <img src="./img/robo-ai.png" alt="تصویر" class="max-w-full -mb-20 h-auto rounded-xl">
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <section id="ai-section" class="bg-gray-900 text-white py-12 px-4 md:px-16">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+      <div>
+        <h2 id="ai-title" class="text-2xl md:text-3xl font-bold">آینده‌ای هوشمند با ۸۷ ابزار قدرتمند</h2>
+        <p id="ai-text" class="mt-4 text-gray-300">وارد دنیای نوآورانه هوش مصنوعی شوید! برای مشاهده دمو رایگان محصولات و
+          آشنایی با قدرت ابزارهای هوش مصنوعی، کافی است کلیک کنید. هوش مصنوعی در خدمت نوآوری شما، تنها یک قدم فاصله
+          دارید!</p>
+        <div class="mt-6 flex flex-col md:flex-row gap-4">
+          <div id="ai-box1" class="bg-gray-800 py-3 px-6 rounded-lg text-center">
+            <span id="ai-number1" class="text-lg font-bold">۳۰۸۰۸۵</span>
+            <p id="ai-label1" class="text-sm text-gray-400">محتوا ایجاد شده</p>
+          </div>
+          <div id="ai-box2" class="bg-gray-800 py-3 px-6 rounded-lg text-center">
+            <span id="ai-number2" class="text-lg font-bold">۱۹۰۲۶</span>
+            <p id="ai-label2" class="text-sm text-gray-400">تعداد کاربران</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+      <style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/mwpxcm3/vt/frame"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <section id="tools-section" class="bg-gray-900 text-white py-10 px-4 lg:px-16 max-w-7xl mx-auto">
+    <h2 id="tools-title" class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2 inline-block">
+      ابزارهای متنی
+    </h2>
+
+    <div class="grid lg:grid-cols-2 gap-6 items-center">
+
+
+        <style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/q8497k6/vt/frame"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+
+
+      <div id="tools-buttons" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <button
+          class="tool-btn flex items-center gap-3 bg-gray-700 hover:bg-gray-600 transition-all p-4 rounded-xl shadow-lg text-sm">
+          <span class="text-xl">🍎</span>
+          <span>متخصص تغذیه</span>
+        </button>
+
+        <button
+          class="tool-btn flex items-center gap-3 bg-gray-700 hover:bg-gray-600 transition-all p-4 rounded-xl shadow-lg text-sm">
+          <span class="text-xl">💰</span>
+          <span>حسابدار</span>
+        </button>
+
+        <button
+          class="tool-btn flex items-center gap-3 bg-gray-700 hover:bg-gray-600 transition-all p-4 rounded-xl shadow-lg text-sm">
+          <span class="text-xl">📢</span>
+          <span>متخصص تبلیغات</span>
+        </button>
+
+        <button
+          class="tool-btn flex items-center gap-3 bg-gray-700 hover:bg-gray-600 transition-all p-4 rounded-xl shadow-lg text-sm">
+          <span class="text-xl">👨‍💼</span>
+          <span>مشاور و روانشناس</span>
+        </button>
+
+        <button
+          class="tool-btn flex items-center gap-3 bg-gray-700 hover:bg-gray-600 transition-all p-4 rounded-xl shadow-lg text-sm">
+          <span class="text-xl">📅</span>
+          <span>راهنمای تور</span>
+        </button>
+
+        <button
+          class="tool-btn flex items-center gap-3 bg-gray-700 hover:bg-gray-600 transition-all p-4 rounded-xl shadow-lg text-sm">
+          <span class="text-xl">📋</span>
+          <span>برنامه ورزشی</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <section class="max-w-5xl mx-auto p-4">
+    <h2 class="text-xl font-bold text-center mb-6">مشتریان دائمی ما</h2>
+    <div x-data="slider()" x-init="startAutoSlide()"
+      class="relative flex items-center justify-center overflow-hidden h-80" @touchstart.passive="startTouch($event)"
+      @touchend.passive="endTouch($event)" @mousedown="startMouse($event)" @mouseup="endMouse($event)"
+      @mouseleave="cancelMouse()">
+      <template x-for="(slide, index) in slides" :key="index">
+        <div :class="{
+                    'absolute left-0 w-1/3 opacity-50 scale-75 z-0 blur-md': index === (activeSlide + 2) % 3,
+                    'absolute right-0 w-1/3 opacity-50 scale-75 z-0 blur-md': index === (activeSlide + 1) % 3,
+                    'relative w-2/3 scale-100 z-10': index === activeSlide
+                }" class="bg-gray-800 p-6 rounded-lg shadow-lg text-center transition-all duration-500">
+          <img :src="slide.image" alt="مشتری" class="rounded-3xl w-16 h-16 mx-auto mb-4">
+          <p class="text-gray-300" x-text="slide.text"></p>
+        </div>
+      </template>
+    </div>
+  </section>
+
+
+
+
+
+  <div class="py-10 px-7 max-w-7xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4 text-center">
+      خرید اشتراک
+    </h2>
+    <div class="flex justify-center mb-4">
+      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mx-2" data-plan="1">
+        1 ماهه
+      </button>
+      <button class="bg-gray-700 text-white px-4 py-2 rounded-lg mx-2" data-plan="3">
+        3 ماهه
+      </button>
+      <button class="bg-gray-700 text-white px-4 py-2 rounded-lg mx-2" data-plan="6">
+        6 ماهه
+      </button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-gray-800 rounded-lg p-6 text-center subscription-box">
+        <h3 class="text-xl font-bold mb-2">
+          رایگان
+        </h3>
+        <p class="mb-4">
+          به مدت 2 ساعت رایگان امتحان کنید.
+        </p>
+        <p class="text-4xl font-bold mb-4">
+          2
+          <span class="text-lg">
+            ساعت
+          </span>
+        </p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4">
+          شروع
+        </button>
+        <ul class="text-right">
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار هوش مصنوعی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            شامل 1 ابزار محدود
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار تصویری
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس صوتی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس متنی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            تصویر به انیمیشن
+          </li>
+        </ul>
+        <p class="mt-4">
+          جزئیات ابزار
+        </p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-6 text-center subscription-box" data-plan="1" data-price="348">
+        <h3 class="text-xl font-bold mb-2">
+          استاندارد
+        </h3>
+        <p class="mb-4">
+          بسته استاندارد شامل چند ابزار محدود است.
+        </p>
+        <p class="text-4xl font-bold mb-4 price">
+          348
+          <span class="text-lg">
+            هزار تومان
+          </span>
+        </p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4">
+          خرید
+        </button>
+        <ul class="text-right">
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار هوش مصنوعی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            شامل 12 ابزار محدود
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار تصویری
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس صوتی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس متنی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            تصویر به انیمیشن
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس روز
+          </li>
+        </ul>
+        <p class="mt-4">
+          جزئیات ابزار
+        </p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-6 text-center subscription-box" data-plan="1" data-price="548">
+        <h3 class="text-xl font-bold mb-2">
+          محبوب
+        </h3>
+        <p class="mb-4">
+          این بسته انتخاب اول کاربران است.
+        </p>
+        <p class="text-4xl font-bold mb-4 price">
+          548
+          <span class="text-lg">
+            هزار تومان
+          </span>
+        </p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4">
+          خرید
+        </button>
+        <ul class="text-right">
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار هوش مصنوعی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            شامل 68 ابزار محدود
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار تصویری
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس صوتی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس متنی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            تصویر به انیمیشن
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس روز
+          </li>
+        </ul>
+        <p class="mt-4">
+          جزئیات ابزار
+        </p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-6 text-center subscription-box" data-plan="1" data-price="898">
+        <h3 class="text-xl font-bold mb-2">
+          طلایی
+        </h3>
+        <p class="mb-4">
+          دسترسی تخصصی و حرفه ای
+        </p>
+        <p class="text-4xl font-bold mb-4 price">
+          898
+          <span class="text-lg">
+            هزار تومان
+          </span>
+        </p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mb-4">
+          خرید
+        </button>
+        <ul class="text-right">
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار هوش مصنوعی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            شامل 1 ابزار محدود
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ابزار تصویری
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس صوتی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            سرویس متنی
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            تصویر به انیمیشن
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-blue-500">
+            </i>
+            ChatGPT, Gemini, Claude, Llama, Simlar Flux, Stable Diffusion, Midjourney
+          </li>
+        </ul>
+        <p class="mt-4">
+          جزئیات ابزار
+        </p>
+      </div>
+    </div>
+
+
+
+    <div class="container mx-auto p-4">
+      <h1 class="text-xl font-bold mb-4 border-b border-gray-600 pb-2">
+        سوالات پر تکرار
+      </h1>
+      <div class="space-y-4">
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer1')">
+          هزینه خرید اشتراک ai irani چقدر است؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto theme-toggle-answer" id="answer1">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer2')">
+          چه نوع فایل هایی قابل پردازش هستند ؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer2">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer3')">
+          آیا می توانم اشتراک خود را با دوستانم به اشتراک بگذارم؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer3">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer4')">
+          تفاوت اشتراک ai irani و اشتراک رسمی ChatGPT چیست؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer4">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer5')">
+          چرا باید از خدمات هوش مصنوعی ai irani استفاده کنم؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer5">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer6')">
+          چه مدل های هوش مصنوعی در پلتفرم ai irani در دسترس هستند؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer6">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer7')">
+          چطور می توانم در پلتفرم ai irani ثبت نام کنم؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer7">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer8')">
+          با خرید اشتراک طلایی ai irani، چه امکاناتی دریافت می کنم؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer8">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer9')">
+          آیا ai irani برای کودکان مناسب است ؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto  theme-toggle-answer" id="answer9">
+          نوشت
+        </div>
+        <div class="bg-gray-700 p-4 rounded cursor-pointer theme-toggle-question" onclick="toggleAnswer('answer10')">
+          آیا همه امکانات Irani AI رایگان هستند؟
+        </div>
+        <div class="bg-gray-600 p-4 rounded hidden max-w-6xl !mt-0 mx-auto theme-toggle-answer" id="answer10">
+          نوشت
+        </div>
+      </div>
+    </div>
+
+
+
+    <footer class="bg-gray-800 text-gray-400 mt-8 theme-toggle-footer">
+      <div class="container mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-right">
+        <div>
+          <h2 class="font-bold mb-2">
+            ارتباط با ما
+          </h2>
+          <p>
+            تهران، کادی جنوبی، خیابان ۱۷، پلاک ۳۰
+          </p>
+          <p>
+            support@irani-ai.com
+          </p>
+          <p>
+            ۰۲۱-۹۱۴۹۳۹۱۵
+          </p>
+        </div>
+        <div>
+          <h2 class="font-bold mb-2">
+            همکاری
+          </h2>
+          <p>
+            پلتفرم توسعه دهندگان
+          </p>
+          <p>
+            API
+          </p>
+          <p>
+            هوش مصنوعی صنعتی
+          </p>
+          <p>
+            مدل سازی شخصی
+          </p>
+        </div>
+        <div>
+          <h2 class="font-bold mb-2">
+            شروع کنید
+          </h2>
+          <p>
+            سوالات پر تکرار
+          </p>
+          <p>
+            ثبت نام
+          </p>
+          <p>
+            وبلاگ
+          </p>
+          <p>
+            درباره ما
+          </p>
+          <p>
+            لیست قیمت ها
+          </p>
+        </div>
+      </div>
+
+      <script src="./js/custom.js"></script>
+</body>
+
+</html>
