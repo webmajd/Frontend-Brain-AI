@@ -6,7 +6,7 @@ const themeBody = document.getElementById('theme-body');
 const header = document.getElementById('header');
 const logo = document.getElementById('logo');
 const authBtn = document.getElementById('auth-btn');
-const lang = document.getElementById('lang');
+// Removed: const lang = document.getElementById('lang'); // This ID is now on the lang-toggle button
 const navLinks = document.getElementById('nav-links');
 const introBox = document.getElementById('intro-box');
 const introTitle = document.getElementById('intro-title');
@@ -56,7 +56,7 @@ themeToggle.addEventListener('click', () => {
     authBtn.classList.toggle('bg-blue-700', !isDarkMode);
     authBtn.classList.toggle('text-white', !isDarkMode);
     authBtn.classList.toggle('bg-blue-500', isDarkMode);
-    lang.classList.toggle('text-black', !isDarkMode);
+    // Removed: lang.classList.toggle('text-black', !isDarkMode); // Handled by language.js button style
     navLinks.classList.toggle('text-black', !isDarkMode);
 
     introBox.classList.toggle('bg-white/30', !isDarkMode);
@@ -154,12 +154,10 @@ themeToggle.addEventListener('click', () => {
 });
 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    // مدیریت نمایش منوی موبایل
-    const menuButton = document.getElementById('menu-button');
-    const closeMenu = document.getElementById('close-menu');
+    // مدیریت نمایش منوی موبایل (این قسمت از کد شما در HTML قبلی وجود نداشت اما در custom.js شما بود، آن را حفظ کردم)
+    const menuButton = document.getElementById('menu-button'); // This ID is not present in the HTML header
+    const closeMenu = document.getElementById('close-menu'); // This ID is not present in the HTML mobile-menu
     const menu = document.getElementById('mobile-menu');
 
     if (menuButton && closeMenu && menu) {
@@ -173,41 +171,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // اسلایدر
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    const nextSlideBtn = document.getElementById('next-slide');
-    const prevSlideBtn = document.getElementById('prev-slide');
-
-    const showSlide = (index) => {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[index].classList.add('active');
-    };
-
-    if (nextSlideBtn && prevSlideBtn && slides.length) {
-        nextSlideBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        });
-
-        prevSlideBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
-        });
-
-        showSlide(currentSlide);
-    }
+    // اسلایدر (قسمت غیر Alpine.js که در custom.js شما بود، حذف شد زیرا Alpine.js آن را مدیریت می کند)
+    // Removed old slider logic
 
     // پلن‌های قیمت‌گذاری
     const pricingPlans = {
         1: 1,
         3: 2.5, // 10% تخفیف
-        6: 5  // 15% تخفیف
+        6: 5 // 15% تخفیف
     };
 
     const buttons = document.querySelectorAll("[data-plan]");
-    const priceElements = document.querySelectorAll("[data-price]");
+    const priceElements = document.querySelectorAll(".price"); // Changed to class selector
 
     if (buttons.length && priceElements.length) {
         buttons.forEach(button => {
@@ -216,9 +191,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 buttons.forEach(btn => btn.classList.replace("bg-blue-500", "bg-gray-700"));
                 this.classList.replace("bg-gray-700", "bg-blue-500");
 
-                priceElements.forEach(plan => {
-                    const basePrice = parseInt(plan.dataset.price);
-                    plan.querySelector(".price").innerHTML = `${(pricingPlans[selectedMonths] * basePrice).toLocaleString()} <span class="text-lg">هزار تومان</span>`;
+                priceElements.forEach(priceSpan => { // Loop through price spans
+                    const parentSubscriptionBox = priceSpan.closest('.subscription-box');
+                    if (parentSubscriptionBox) {
+                        const basePrice = parseInt(parentSubscriptionBox.dataset.price);
+                        if (!isNaN(basePrice)) { // Check if basePrice is a number
+                             // Get the 'thousandToman' translation from the global translations object
+                            const currencyText = window.currentTranslations ? window.currentTranslations.thousandToman : 'هزار تومان';
+                            priceSpan.innerHTML = `${(pricingPlans[selectedMonths] * basePrice).toLocaleString()} <span class="text-lg">${currencyText}</span>`;
+                        }
+                    }
                 });
 
                 console.log("پلن انتخاب شده: " + selectedMonths);
@@ -228,67 +210,82 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function slider() {
-            return {
-                activeSlide: 0,
-                slides: [
-                    {image: './img/image2.jpg', text: 'مدت‌ها دنبال یه سرویس سریع و پایدار برای پردازش متن با هوش مصنوعی بودم، ولی همیشه مشکل تاخیر داشتم. این سایت واقعا تونست نیازم رو برطرف کنه، سرعت پاسخگویی عالیه و مهم‌تر از اون، دقیق‌ترین خروجی‌ها رو گرفتم!'},
-                    {image: './img/image3.jpg', text: 'هر روز از این سرویس برای تحلیل داده‌های مشتریان و استخراج اطلاعات کلیدی استفاده می‌کنم. رابط کاربری ساده، اما قدرتمنده و پشتیبانی هم همیشه جوابگو بوده. از تیم توسعه‌دهنده ممنونم'},
-                    {image: './img/image1.jpg', text: 'ترجمه متون با این سیستم از همه مترجم‌های ماشینی که قبلا استفاده کردم بهتره. ساختار جملات طبیعی‌تره و مخصوصا توی متن‌های تخصصی، خیلی کمتر نیاز به ویرایش دارم.'}
-                ],
-                touchStartX: null,
-                mouseStartX: null,
-                startAutoSlide() {
-                    setInterval(() => {
-                        this.nextSlide();
-                    }, 5000);
-                },
-                nextSlide() {
-                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
-                },
-                prevSlide() {
-                    this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
-                },
-                startTouch(e) {
-                    this.touchStartX = e.touches[0].clientX;
-                },
-                endTouch(e) {
-                    let touchEndX = e.changedTouches[0].clientX;
-                    let diff = this.touchStartX - touchEndX;
-                    if (diff > 50) {
-                        this.nextSlide();
-                    } else if (diff < -50) {
-                        this.prevSlide();
-                    }
-                    this.touchStartX = null;
-                },
-                startMouse(e) {
-                    this.mouseStartX = e.clientX;
-                },
-                endMouse(e) {
-                    let mouseEndX = e.clientX;
-                    let diff = this.mouseStartX - mouseEndX;
-                    if (diff > 50) {
-                        this.nextSlide();
-                    } else if (diff < -50) {
-                        this.prevSlide();
-                    }
-                    this.mouseStartX = null;
-                },
-                cancelMouse() {
-                    this.mouseStartX = null;
-                }
+    return {
+        activeSlide: 0,
+        slides: [], // Initialize empty; will be filled by updateSlides()
+        init() {
+            // This 'init' will run when the Alpine component is mounted
+            this.updateSlides();
+            // Listen for a custom event from language.js to update slides
+            window.addEventListener('languageChanged', () => {
+                this.updateSlides();
+            });
+            this.startAutoSlide();
+        },
+        updateSlides() {
+            // Safely access current translations, defaulting to an empty array
+            this.slides = (window.currentTranslations && window.currentTranslations.testimonials) ?
+                window.currentTranslations.testimonials : [];
+            // Reset active slide if the number of slides changes or if it's out of bounds
+            if (this.activeSlide >= this.slides.length) {
+                this.activeSlide = 0;
             }
+        },
+        touchStartX: null,
+        mouseStartX: null,
+        startAutoSlide() {
+            // Clear any existing interval to prevent multiple intervals running
+            if (this._autoSlideInterval) {
+                clearInterval(this._autoSlideInterval);
+            }
+            this._autoSlideInterval = setInterval(() => {
+                this.nextSlide();
+            }, 5000);
+        },
+        nextSlide() {
+            this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+        },
+        prevSlide() {
+            this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
+        },
+        startTouch(e) {
+            this.touchStartX = e.touches[0].clientX;
+        },
+        endTouch(e) {
+            let touchEndX = e.changedTouches[0].clientX;
+            let diff = this.touchStartX - touchEndX;
+            if (diff > 50) {
+                this.nextSlide();
+            } else if (diff < -50) {
+                this.prevSlide();
+            }
+            this.touchStartX = null;
+        },
+        startMouse(e) {
+            this.mouseStartX = e.clientX;
+        },
+        endMouse(e) {
+            let mouseEndX = e.clientX;
+            let diff = this.mouseStartX - mouseEndX;
+            if (diff > 50) {
+                this.nextSlide();
+            } else if (diff < -50) {
+                this.prevSlide();
+            }
+            this.mouseStartX = null;
+        },
+        cancelMouse() {
+            this.mouseStartX = null;
         }
+    }
+}
 
 
 function toggleAnswer(id) {
-            var element = document.getElementById(id);
-            if (element.classList.contains('hidden')) {
-                element.classList.remove('hidden');
-            } else {
-                element.classList.add('hidden');
-            }
-        }
-
-
-
+    var element = document.getElementById(id);
+    if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+    } else {
+        element.classList.add('hidden');
+    }
+}
