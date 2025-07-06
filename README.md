@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <img src="https://webmajd.github.io/Frontend-IDEA-Center/images/preview.png" alt="Project Preview" width="700">
+  <img src="https://webmajd.github.io/Frontend-IDEA-Center/img/preview.png" alt="Project Preview" width="700">
 </div>
 
 <p align="center">
