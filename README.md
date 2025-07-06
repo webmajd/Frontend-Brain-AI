@@ -49,7 +49,7 @@ Every section is crafted as a separate component, making the codebase modular, s
 <div dir="ltr" align="left">
 
 - **Stunning UI/UX:** A visually appealing design with modern gradients and layout.
-- **Component-Based Architecture:** Built with React, featuring reusable components for features, articles, CTAs, and more.
+- **Component-Based Architecture:** Built with tailwind, featuring reusable components for features, articles, CTAs, and more.
 - **Fully Responsive:** Ensures a seamless experience across all devices, from mobile phones to desktops.
 - **Clean Codebase:** Well-organized and commented code for developer-friendliness.
 - **CSS BEM Methodology:** Styles are written following the BEM (Block, Element, Modifier) convention for scalable and maintainable CSS.
@@ -62,7 +62,7 @@ Every section is crafted as a separate component, making the codebase modular, s
 <div dir="rtl" align="right">
 
 - **UI/UX خیره‌کننده:** طراحی بصری جذاب با گرادینت‌ها و طرح‌بندی مدرن.
-- **معماری مبتنی بر کامپوننت:** ساخته شده با React، شامل کامپوننت‌های قابل استفاده مجدد برای ویژگی‌ها، مقالات، دکمه‌های فراخوان (CTA) و غیره.
+- **معماری مبتنی بر کامپوننت:** ساخته شده با tailwind، شامل کامپوننت‌های قابل استفاده مجدد برای ویژگی‌ها، مقالات، دکمه‌های فراخوان (CTA) و غیره.
 - **کاملاً واکنش‌گرا:** تضمین تجربه کاربری یکپارچه در تمام دستگاه‌ها، از موبایل تا دسکتاپ.
 - **کدبیس تمیز:** کد سازمان‌یافته و کامنت‌گذاری شده برای سهولت کار توسعه‌دهندگان.
 - **متدولوژی BEM در CSS:** استایل‌ها با پیروی از قرارداد BEM (Block, Element, Modifier) نوشته شده‌اند که باعث مقیاس‌پذیری و نگهداری آسان CSS می‌شود.
@@ -76,7 +76,7 @@ Every section is crafted as a separate component, making the codebase modular, s
 
 This project leverages the power of modern frontend technologies to deliver a high-performance, visually rich experience.
 
-* **[tailwind](https://reactjs.org/)**
+* **[tailwind](https://tailwindcss.com/)**
 * **CSS3 (with BEM methodology)**
 * **JavaScript (ES6+)**
 
@@ -88,12 +88,7 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites | پیش‌نیازها
 
-You need to have Node.js and npm (or yarn) installed on your machine.
-
-* npm
-    ```sh
-    npm install npm@latest -g
-    ```
+You only need a modern web browser to view the project. No special installations are required.
 
 ### Installation | نصب
 
@@ -103,17 +98,11 @@ You need to have Node.js and npm (or yarn) installed on your machine.
     ```
 2.  Navigate to the project directory:
     ```sh
-    cd Frontend-Brain-AI
+    cd Frontend-IDEA-Center
     ```
-3.  Install NPM packages:
-    ```sh
-    npm install
-    ```
-4.  Run the app in development mode:
-    ```sh
-    npm start
-    ```
-    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3.  Open the `index.html` file in your browser to see the project.
+
+---
 
 ---
 
@@ -124,11 +113,11 @@ You need to have Node.js and npm (or yarn) installed on your machine.
 This project serves as an excellent starting point or template for anyone looking to build a modern landing page for a tech product. You can customize the components, text, and branding to fit your own needs.
 
 The project structure is organized as follows:
-- `src/components`: Contains all reusable React components (`Article`, `Brand`, `CTA`, `Feature`, `Navbar`).
+- `src/components`: Contains all reusable tailwind components (`Article`, `Brand`, `CTA`, `Feature`, `Navbar`).
 - `src/containers`: Contains the main sections of the page (`Blog`, `Features`, `Footer`, `Header`, `Possibility`, `WhatGPT3`).
-- `src/assets`: Stores all static assets like images and logos.
-- `App.js` & `App.css`: The main component that assembles the page and its global styles.
-- `index.js` & `index.css`: The entry point of the React application and root styles.
+- `src/`: Stores all static assets like images and logos.
+- `custom.js` & `style.css`: The main component that assembles the page and its global styles.
+- `tailwindcss.js`: The entry point of the tailwind and root styles.
 
 </div>
 
@@ -141,9 +130,9 @@ The project structure is organized as follows:
 ساختار پروژه به شرح زیر است:
 - `src/components`: شامل تمام کامپوننت‌های قابل استفاده مجدد تیلویند (`Article`, `Brand`, `CTA`, `Feature`, `Navbar`).
 - `src/containers`: شامل بخش‌های اصلی صفحه (`Blog`, `Features`, `Footer`, `Header`, `Possibility`, `WhatGPT3`).
-- `src/assets`: محل ذخیره‌سازی تمام فایل‌های استاتیک مانند تصاویر و لوگوها.
-- `App.js` و `App.css`: کامپوننت اصلی که تمام بخش‌های صفحه را کنار هم قرار می‌دهد و استایل‌های سراسری.
-- `index.js` و `index.css`: نقطه ورود اپلیکیشن تیلویند و استایل‌های ریشه.
+- `src/`: محل ذخیره‌سازی تمام فایل‌های استاتیک مانند تصاویر و لوگوها.
+- `custom.js` و `style.css`: کامپوننت اصلی که تمام بخش‌های صفحه را کنار هم قرار می‌دهد و استایل‌های سراسری.
+- `tailwindcss.js`: نقطه ورود تیلویند و استایل‌های ریشه.
 
 </div>
 
