@@ -2,7 +2,7 @@
 
 <div dir="rtl" align="right">
 
-یک صفحه فرود (Landing Page) مدرن و کاملاً واکنش‌گرا که با الهام از طراحی‌های پیشرفته و با استفاده از React.js و CSS مدرن ساخته شده است. این پروژه نمونه‌ای عالی از یک رابط کاربری جذاب برای معرفی یک محصول یا سرویس مبتنی بر هوش مصنوعی است.
+یک صفحه فرود (Landing Page) مدرن و کاملاً واکنش‌گرا که با الهام از طراحی‌های پیشرفته و با استفاده از tailwind و CSS مدرن ساخته شده است. این پروژه نمونه‌ای عالی از یک رابط کاربری جذاب برای معرفی یک محصول یا سرویس مبتنی بر هوش مصنوعی است.
 
 </div>
 
@@ -26,7 +26,7 @@
 
 <div dir="ltr" align="left">
 
-This project is a fully responsive, modern UI/UX website for a conceptual GPT-3 powered service. It was developed using React.js and follows best practices for creating reusable components and a clean code structure. The design is futuristic and aims to capture the essence of artificial intelligence, making it a perfect template for tech startups and AI-related products.
+This project is a fully responsive, modern UI/UX website for a conceptual GPT-3 powered service. It was developed using tailwind and follows best practices for creating reusable components and a clean code structure. The design is futuristic and aims to capture the essence of artificial intelligence, making it a perfect template for tech startups and AI-related products.
 
 Every section is crafted as a separate component, making the codebase modular, scalable, and easy to maintain.
 
@@ -36,7 +36,7 @@ Every section is crafted as a separate component, making the codebase modular, s
 
 <div dir="rtl" align="right">
 
-این پروژه یک وب‌سایت کاملاً واکنش‌گرا با رابط کاربری (UI/UX) مدرن برای یک سرویس مفهومی مبتنی بر GPT-3 است. این پروژه با استفاده از React.js و با پیروی از بهترین شیوه‌ها برای ایجاد کامپوننت‌های قابل استفاده مجدد و ساختار کد تمیز توسعه داده شده است. طراحی آینده‌نگرانه آن با هدف به تصویر کشیدن جوهره هوش مصنوعی انجام شده و آن را به یک قالب عالی برای استارت‌آپ‌های فناوری و محصولات مرتبط با AI تبدیل می‌کند.
+این پروژه یک وب‌سایت کاملاً واکنش‌گرا با رابط کاربری (UI/UX) مدرن برای یک سرویس مفهومی مبتنی بر GPT-3 است. این پروژه با استفاده از tailwind و با پیروی از بهترین شیوه‌ها برای ایجاد کامپوننت‌های قابل استفاده مجدد و ساختار کد تمیز توسعه داده شده است. طراحی آینده‌نگرانه آن با هدف به تصویر کشیدن جوهره هوش مصنوعی انجام شده و آن را به یک قالب عالی برای استارت‌آپ‌های فناوری و محصولات مرتبط با AI تبدیل می‌کند.
 
 هر بخش به عنوان یک کامپوننت مجزا طراحی شده که این امر باعث ماژولار بودن، مقیاس‌پذیری و نگهداری آسان کدبیس می‌شود.
 
@@ -76,7 +76,7 @@ Every section is crafted as a separate component, making the codebase modular, s
 
 This project leverages the power of modern frontend technologies to deliver a high-performance, visually rich experience.
 
-* **[React.js](https://reactjs.org/)**
+* **[tailwind](https://reactjs.org/)**
 * **CSS3 (with BEM methodology)**
 * **JavaScript (ES6+)**
 
@@ -139,11 +139,11 @@ The project structure is organized as follows:
 این پروژه به عنوان یک نقطه شروع یا قالب عالی برای هر کسی است که به دنبال ساخت یک صفحه فرود مدرن برای یک محصول فناوری است. شما می‌توانید کامپوننت‌ها، متون و برندینگ را مطابق با نیازهای خود سفارشی کنید.
 
 ساختار پروژه به شرح زیر است:
-- `src/components`: شامل تمام کامپوننت‌های قابل استفاده مجدد ری‌اکت (`Article`, `Brand`, `CTA`, `Feature`, `Navbar`).
+- `src/components`: شامل تمام کامپوننت‌های قابل استفاده مجدد تیلویند (`Article`, `Brand`, `CTA`, `Feature`, `Navbar`).
 - `src/containers`: شامل بخش‌های اصلی صفحه (`Blog`, `Features`, `Footer`, `Header`, `Possibility`, `WhatGPT3`).
 - `src/assets`: محل ذخیره‌سازی تمام فایل‌های استاتیک مانند تصاویر و لوگوها.
 - `App.js` و `App.css`: کامپوننت اصلی که تمام بخش‌های صفحه را کنار هم قرار می‌دهد و استایل‌های سراسری.
-- `index.js` و `index.css`: نقطه ورود اپلیکیشن ری‌اکت و استایل‌های ریشه.
+- `index.js` و `index.css`: نقطه ورود اپلیکیشن تیلویند و استایل‌های ریشه.
 
 </div>
 
